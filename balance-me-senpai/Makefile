@@ -21,6 +21,5 @@ prepare:
 	mkdir balance
 	unrar x $(bin) balance
 	rename 's/Balance me Senpai - Linux/Balance me Senpai/' balance/*
-	rm "balance/Balance me Senpai_Data/Managed/UnityEngine.dll.mdb"
 	u2deb prepare balance
 
