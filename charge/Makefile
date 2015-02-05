@@ -1,5 +1,8 @@
 include ../mk/include.mk
 
+export UPSTREAMNAME     = CHARGE!
+# conflicts with /usr/bin/charge from the package "emboss"
+export FILENAME         = charge-game
 export SHORTDESCRIPTION = race between electrical sources to keep your heart beating
 export VERSION          = 1.2
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>
@@ -20,8 +23,5 @@ download:
 prepare:
 	unzip $(bin)
 	mv Linux/CHARGE Linux/CHARGE.x86
-	# conflicts with /usr/bin/charge from the package "emboss"
-	rename 's/CHARGE/CHARGE Game/' Linux/*
 	u2deb prepare Linux
-	sed -i 's/Name=CHARGE Game/Name=CHARGE/' /tmp/UnityEngine2deb_tmp/build/x86/chargegame.desktop
 

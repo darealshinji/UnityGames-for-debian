@@ -1,5 +1,6 @@
 include ../mk/include.mk
 
+export UPSTREAMNAME     = [TheWorld]
 export SHORTDESCRIPTION = Alpha MMORPG
 export VERSION          = 2.0.2
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>

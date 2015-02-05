@@ -1,5 +1,6 @@
 include ../mk/include.mk
 
+export UPSTREAMNAME     = Slender - Abyss
 export SHORTDESCRIPTION = Slender Man horror game
 export VERSION          = 0.1.5
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>
@@ -21,8 +22,7 @@ prepare:
 	unzip $(bin)
 	rm -r __MACOSX
 	mv "Slender Abyss (Linux) V.0.1.5" slender-abyss
-	rename 's/Slender Abyss \(Linux\)/Slender - Abyss/' slender-abyss/*
-	mv "slender-abyss/Slender - Abyss" "slender-abyss/Slender - Abyss.x86"
-	rm slender-abyss/.DS_Store slender-abyss/*.rtf
+	rename 's/Slender Abyss \(Linux\)/slender-abyss/' slender-abyss/*
+	mv slender-abyss/slender-abyss slender-abyss/slender-abyss.x86
+	rm slender-abyss/*.rtf
 	u2deb prepare slender-abyss
-

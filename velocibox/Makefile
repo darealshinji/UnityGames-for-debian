@@ -19,7 +19,5 @@ download:
 
 prepare:
 	unzip $(bin) -d Velocibox
-	rm "Velocibox/Velocibox Demo_Data/Plugins/x86/libCSteamworks.so"
-	rm "Velocibox/Velocibox Demo_Data/Plugins/x86/libsteam_api.so"
 	u2deb prepare Velocibox
 

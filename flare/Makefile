@@ -1,5 +1,8 @@
 include ../mk/include.mk
 
+export UPSTREAMNAME     = FLARE
+# there already is a FOSS game with the name "flare"
+export FILENAME         = flare-unity
 export SHORTDESCRIPTION = First person dungeon maze game
 export VERSION          = 1.5.1
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>
@@ -23,12 +26,6 @@ prepare:
 	unzip $(bin)
 	mv "FLARE 1.5 Linux" flare
 	rm flare/*.js
-
-	# there already is a FOSS game with the name "flare"
-	rename 's/FLARE 1.5/FLARE-Unity/' flare/*
-
-	cp ../mk/ScreenSelector.png flare/FLARE-Unity_Data
+	cp ../mk/ScreenSelector.png "flare/FLARE 1.5_Data"
 	u2deb prepare flare --icon=flare-unity.png
-
-	sed -i 's/Name=FLARE-Unity/Name=FLARE/' /tmp/UnityEngine2deb_tmp/build/x86/flare-unity.desktop
 

@@ -1,5 +1,7 @@
 include ../mk/include.mk
 
+export UPSTREAMNAME     = SUPERHOT Prototype
+export FILENAME         = superhot-prototype
 export SHORTDESCRIPTION = fps game where time moves only when you move
 export VERSION          = 2013.09
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>
@@ -21,7 +23,6 @@ download:
 
 prepare:
 	unzip $(bin)
-	rename 's/SUPERHOT September 2013/SUPERHOT Prototype/' Linux/*
-	cp icon.png "Linux/SUPERHOT Prototype_Data/ScreenSelector.png"
+	cp icon.png "Linux/SUPERHOT September 2013_Data/ScreenSelector.png"
 	u2deb prepare ./Linux --icon=icon.png
 

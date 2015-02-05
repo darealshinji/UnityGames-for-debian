@@ -1,5 +1,8 @@
 include ../mk/include.mk
 
+export UPSTREAMNAME     = Env
+# rename the game to not conflict with the /usr/bin/env command
+export FILENAME         = env-game
 export SHORTDESCRIPTION = abstract first-person physics platformer
 export VERSION          = 1.0
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>
@@ -19,10 +22,6 @@ download:
 
 prepare:
 	unzip $(bin) -d env
-	# rename the game to not conflict with the /usr/bin/env command
-	rename 's/Env/Env-Game/' env/*
-	cp ../mk/ScreenSelector.png env/Env-Game_Data
+	cp ../mk/ScreenSelector.png env/Env_Data
 	u2deb prepare env
-	sed -i 's/Name=Env-Game/Name=Env/' /tmp/UnityEngine2deb_tmp/build/x86/env-game.desktop
-	sed -i 's/Name=Env-Game/Name=Env/' /tmp/UnityEngine2deb_tmp/build/x86_64/env-game.desktop
 

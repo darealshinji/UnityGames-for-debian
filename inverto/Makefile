@@ -1,5 +1,7 @@
 include ../mk/include.mk
 
+export UPSTREAMNAME     = Inverto Demo
+export FILENAME         = inverto-demo
 export SHORTDESCRIPTION = first person shooter-puzzler
 export VERSION          = 0.41a
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>
@@ -8,7 +10,7 @@ export YEAR             = 2013
 export RIGHTHOLDER      = Gravity Box Studio
 
 bin            = InvertoAlpha041_Linux.tar.gz
-cleanfiles     = inverto
+cleanfiles     = InvertoLinux
 distcleanfiles = $(bin)
 
 
@@ -19,7 +21,5 @@ download:
 
 prepare:
 	tar xvf $(bin)
-	mv InvertoLinux inverto
-	rename 's/Inverto/Inverto Demo/' inverto/*
-	u2deb prepare inverto
+	u2deb prepare InvertoLinux
 

@@ -1,5 +1,7 @@
 include ../mk/include.mk
 
+export UPSTREAMNAME     = Refuge
+export FILENAME         = refuge
 export SHORTDESCRIPTION = horror game
 export VERSION          = 3.0
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>
@@ -20,7 +22,6 @@ download:
 prepare:
 	mkdir refuge
 	cd refuge && unrar x ../$(bin)
-	rename 's/Refuge v3 Linux86/Refuge/' refuge/*
-	mv refuge/Refuge refuge/Refuge.x86
+	mv "refuge/Refuge v3 Linux86" "refuge/Refuge v3 Linux86.x86"
 	u2deb prepare refuge -Z=bzip2
 

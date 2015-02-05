@@ -1,5 +1,7 @@
 include ../mk/include.mk
 
+export UPSTREAMNAME     = Box Life
+export FILENAME         = boxlife
 export SHORTDESCRIPTION = First person metroidvania
 export VERSION          = 1.2.2
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>
@@ -19,6 +21,5 @@ download:
 
 prepare:
 	unzip $(bin)
-	rename 's/box_life/Box Life/' boxlife_linux/*
 	u2deb prepare boxlife_linux
 

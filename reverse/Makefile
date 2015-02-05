@@ -1,5 +1,7 @@
 include ../mk/include.mk
 
+export UPSTREAMNAME     = ReversE Demo
+export FILENAME         = reverse-demo
 export SHORTDESCRIPTION = point A to point B mirror logic based puzzler game
 export VERSION          = 1.0.0
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>
@@ -9,7 +11,7 @@ export RIGHTHOLDER      = Andrew Lloyd
 
 deps           = unzip
 bin            = ReversE_Linux_Demo_1.0.0.zip
-cleanfiles     = reverse
+cleanfiles     = "ReversE Linux Demo 1.0.0 (5)"
 distcleanfiles = $(bin)
 
 
@@ -19,7 +21,5 @@ download:
 
 prepare:
 	unzip $(bin)
-	mv "ReversE Linux Demo 1.0.0 (5)" reverse
-	rename 's/ReversELinuxDemo/ReversE Demo/' reverse/*
-	u2deb prepare reverse
+	u2deb prepare "ReversE Linux Demo 1.0.0 (5)"
 

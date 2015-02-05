@@ -1,5 +1,7 @@
 include ../mk/include.mk
 
+export UPSTREAMNAME     = Balance me Senpai
+export FILENAME         = balance-me-senpai
 export SHORTDESCRIPTION = Balance me Senpai
 export VERSION          = 1.0
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>
@@ -20,6 +22,5 @@ download:
 prepare:
 	mkdir balance
 	unrar x $(bin) balance
-	rename 's/Balance me Senpai - Linux/Balance me Senpai/' balance/*
 	u2deb prepare balance
 

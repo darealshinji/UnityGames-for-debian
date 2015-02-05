@@ -1,5 +1,7 @@
 include ../mk/include.mk
 
+export UPSTREAMNAME     = Blinding Dark
+export FILENAME         = blinding-dark
 export SHORTDESCRIPTION = First Person Shooter horror game
 export VERSION          = 1.0.0
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>
@@ -19,6 +21,5 @@ download:
 
 prepare:
 	unzip $(bin) -d blindingdark
-	rename 's/BlindingDark_Linux_v1.0.0/Blinding Dark/' blindingdark/*
 	u2deb prepare blindingdark --data -Z=gzip
 

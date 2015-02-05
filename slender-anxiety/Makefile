@@ -22,6 +22,6 @@ prepare:
 	mv "Slender - Anxiety (LINUX) v0.1.9" slender-anxiety
 	mv "slender-anxiety/Slender - Anxiety" "slender-anxiety/Slender - Anxiety.x86"
 	u2deb prepare slender-anxiety -Z=gzip
-	mv /tmp/UnityEngine2deb_tmp/build/x86/source/Changelog.txt /tmp/UnityEngine2deb_tmp/build/x86/debian
+	cp slender-anxiety/Changelog.txt /tmp/UnityEngine2deb_tmp/build/x86/debian
 	cat override_dh_installchangelogs >> /tmp/UnityEngine2deb_tmp/build/x86/debian/rules
 

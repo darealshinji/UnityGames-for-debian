@@ -1,5 +1,7 @@
 include ../mk/include.mk
 
+export UPSTREAMNAME     = Ildefonse
+export FILENAME         = ildefonse
 export SHORTDESCRIPTION = first-person horror game
 export VERSION          = 1.1
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>
@@ -22,7 +24,6 @@ download:
 prepare:
 	mkdir Ildefonse
 	cd Ildefonse && unrar x ../$(bin)
-	rename 's/Ildefonse_linux/Ildefonse/' Ildefonse/*
-	mv Ildefonse/Ildefonse Ildefonse/Ildefonse.x86
+	mv Ildefonse/Ildefonse_linux Ildefonse/Ildefonse_linux.x86
 	u2deb prepare Ildefonse -Z=bz2 --icon=ildefonse.png
 

@@ -1,5 +1,7 @@
 include ../mk/include.mk
 
+export UPSTREAMNAME     = The Groundskeeper
+export FILENAME         = groundskeeper
 export SHORTDESCRIPTION = first-person horror game
 export VERSION          = 1.0
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>
@@ -9,7 +11,8 @@ export RIGHTHOLDER      = Pedestrian Crossing Games
 
 deps           = unzip
 bin            = TheGroundskeeperLinux.zip
-cleanfiles     = TheGroundskeeper README
+DIR            = TheGroundskeeper
+cleanfiles     = $(DIR) README
 distcleanfiles = $(bin)
 
 
@@ -19,10 +22,9 @@ download:
 
 prepare:
 	unzip $(bin)
-	mv TheGroundskeeper\(Linux\) TheGroundskeeper
-	rename 's/TheGroundskeeper/The Groundskeeper/' TheGroundskeeper/*
-	mv "TheGroundskeeper/ReadMe (Please Read).txt" README
-	u2deb prepare TheGroundskeeper -Z=bzip2
+	mv $(DIR)\(Linux\) $(DIR)
+	cp $(DIR)/"ReadMe (Please Read).txt" README
+	u2deb prepare $(DIR) -Z=bzip2
 	cp README /tmp/UnityEngine2deb_tmp/build/x86
 	echo README > /tmp/UnityEngine2deb_tmp/build/x86/debian/docs
 

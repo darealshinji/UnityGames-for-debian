@@ -1,5 +1,7 @@
 include ../mk/include.mk
 
+export UPSTREAMNAME     = Slender - Nightmares
+export FILENAME         = slender-nightmares
 export SHORTDESCRIPTION = Slender Man horror game
 export VERSION          = 0.1.2
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>
@@ -9,7 +11,7 @@ export RIGHTHOLDER      = jared1016
 
 deps           = unzip
 bin            = slender-nightmares.zip
-cleanfiles     = slender-nightmares
+cleanfiles     = "Slender Nightmares Linux"
 distcleanfiles = $(bin)
 
 
@@ -19,8 +21,5 @@ download:
 
 prepare:
 	unzip $(bin)
-	mv "Slender Nightmares Linux" slender-nightmares
-	rm -r "slender-nightmares/Slender Nightmares Linux Universal_Data/Mono/x86"
-	rename 's/Slender Nightmares Linux Universal/Slender - Nightmares/' slender-nightmares/*
-	u2deb prepare slender-nightmares
+	u2deb prepare "Slender Nightmares Linux"
 

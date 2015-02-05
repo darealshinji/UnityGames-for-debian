@@ -1,5 +1,6 @@
 include ../mk/include.mk
 
+export FILENAME         = blackout-the-proof
 export SHORTDESCRIPTION = Slender Man based horror game
 export VERSION          = 1.1
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>

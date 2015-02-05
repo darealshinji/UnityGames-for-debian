@@ -1,5 +1,7 @@
 include ../mk/include.mk
 
+export UPSTREAMNAME     = The Midnight Game
+export FILENAME         = midnightgame
 export SHORTDESCRIPTION = summon the Midnight Man
 export VERSION          = 1.3plus
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>
@@ -20,7 +22,6 @@ download:
 prepare:
 	mkdir midnightgame
 	unrar x $(bin) midnightgame
-	rename 's/The Midnight Game - Linux/The Midnight Game/' midnightgame/*
 	rm "midnightgame/Min and Rec. Reqs..rtf"
 	u2deb prepare midnightgame -Z=bz2
 

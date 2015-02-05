@@ -1,5 +1,7 @@
 include ../mk/include.mk
 
+export UPSTREAMNAME     = One Late Night
+export FILENAME         = one-late-night
 export SHORTDESCRIPTION = horror-game experience
 export VERSION          = 0+build10
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>

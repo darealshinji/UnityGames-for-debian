@@ -1,5 +1,7 @@
 include ../mk/include.mk
 
+export UPSTREAMNAME     = Slender - The Nine Pages
+export FILENAME         = slender-nine-pages
 export SHORTDESCRIPTION = Slender Man horror game
 export VERSION          = 1.3plus
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>
@@ -9,7 +11,8 @@ export RIGHTHOLDER      = petrzmax
 
 deps           = unrar 
 bin            = Slender_The_Nine_Pages_v1.3_for_Linux.rar
-cleanfiles     = ninepages
+DIR            = Slender The Nine Pages + for Linux
+cleanfiles     = $(DIR)
 distcleanfiles = $(bin)
 
 
@@ -19,9 +22,7 @@ download:
 
 prepare:
 	unrar x $(bin)
-	mv "Slender The Nine Pages + for Linux" ninepages
-	rename 's/Slender The Nine Pages/Slender - The Nine Pages/' ninepages/*
-	mv "ninepages/Slender The Nine Pages" "ninepages/Slender The Nine Pages.x86"
-	rm ninepages/*.txt
-	u2deb prepare ninepages
+	mv "$(DIR)/Slender The Nine Pages" "$(DIR)/Slender The Nine Pages.x86"
+	rm "$(DIR)"/*.txt
+	u2deb prepare "$(DIR)"
 

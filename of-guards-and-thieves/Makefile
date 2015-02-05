@@ -1,5 +1,7 @@
 include ../mk/include.mk
 
+export UPSTREAMNAME     = Of Guards And Thieves
+export FILENAME         = ofguardsandthieves
 export SHORTDESCRIPTION = teamplay, stealthy movement, action, tactics and timing
 export VERSION          = 1.0
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>
@@ -18,12 +20,9 @@ download:
 
 prepare:
 	tar xvf $(bin)
-	rename 's/OGAT/Of Guards And Thieves/' "Of Guards And Thieves"/*
 	u2deb prepare "Of Guards And Thieves"
-	cp ofguardsandthieves /tmp/UnityEngine2deb_tmp/build/x86
-	cp ofguardsandthieves /tmp/UnityEngine2deb_tmp/build/x86_64
-	cat override_dh_install >> /tmp/UnityEngine2deb_tmp/build/x86/debian/rules
-	cat override_dh_install >> /tmp/UnityEngine2deb_tmp/build/x86_64/debian/rules
-	echo 'image-file-in-usr-lib */UnityPlayer.png' >> /tmp/UnityEngine2deb_tmp/build/x86/debian/lintian-overrides
-	echo 'image-file-in-usr-lib */UnityPlayer.png' >> /tmp/UnityEngine2deb_tmp/build/x86_64/debian/lintian-overrides
+	$(foreach ARCH, x86 x86_64,\
+		cp ofguardsandthieves /tmp/UnityEngine2deb_tmp/build/$(ARCH) ;\
+		cat override_dh_install >> /tmp/UnityEngine2deb_tmp/build/$(ARCH)/debian/rules ;\
+		echo 'image-file-in-usr-lib */UnityPlayer.png' >> /tmp/UnityEngine2deb_tmp/build/$(ARCH)/debian/lintian-overrides ;)
 

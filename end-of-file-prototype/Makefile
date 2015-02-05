@@ -1,5 +1,7 @@
 include ../mk/include.mk
 
+export UPSTREAMNAME     = End of File: Prototype()
+export FILENAME         = end-of-file-prototype
 export SHORTDESCRIPTION = first person 'perspective' puzzle game
 export VERSION          = 1.0
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>
@@ -19,6 +21,4 @@ download:
 prepare:
 	unzip $(bin) -d eof
 	u2deb prepare eof -Z=bzip2 --data
-	sed -i 's/Name=EoF/Name=End of File: Prototype()/' /tmp/UnityEngine2deb_tmp/build/x86/eof.desktop
-	sed -i 's/Name=EoF/Name=End of File: Prototype()/' /tmp/UnityEngine2deb_tmp/build/x86_64/eof.desktop
 

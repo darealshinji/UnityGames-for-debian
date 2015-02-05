@@ -1,5 +1,7 @@
 include ../mk/include.mk
 
+export UPSTREAMNAME     = Gunscape
+export FILENAME         = gunscape
 export SHORTDESCRIPTION = First-person shooter
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>
 export HOMEPAGE         = http://www.playgunscape.com/
@@ -19,6 +21,5 @@ prepare:
 	unzip $(bin)
 	rm -r __MACOSX
 	export VERSION=`ls gunscape-linux/*.x86 | cut -d 'v' -f2 | sed 's/.x86//'` ;\
-	rename "s/gunscape-v$${VERSION}/Gunscape/" gunscape-linux/* ;\
 	u2deb prepare gunscape-linux -Z=bz2
 

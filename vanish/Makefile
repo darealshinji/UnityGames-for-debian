@@ -19,6 +19,5 @@ download:
 
 prepare:
 	unzip $(bin)
-	rm VANISH_LinuxRC.1/*.txt
 	u2deb prepare VANISH_LinuxRC.1
 
