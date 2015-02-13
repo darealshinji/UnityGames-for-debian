@@ -1,0 +1,7 @@
+Enter a detailed package description in here.
+
+Basically just copying and pasting a description from the game's homepage will do it.
+
+Make sure this text file doesn't start or end with an empty line or contains two or more empty lines in a row.
+The package will still build and work fine, but it's considered a bug in Debian packages.
+Folding and things like that will be done automatically.
