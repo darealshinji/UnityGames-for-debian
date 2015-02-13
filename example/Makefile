@@ -62,6 +62,9 @@ distcleanfiles = $(bin)
 download:
 	# Check if the archive exists, otherwise download it.
 	test -f $(bin) || wget "http://www.super-awesome.games/download/$(bin)"
+	# Use 'wget -O' (capital "oh") if you want to download an archive from an address
+	# which doesn't reveal the filename:
+	# test -f $(bin) || wget -O $(bin) "http://www.super-awesome.games/index.php?action=download"
 
 	# Verify the sha256 checksum to check the file's integrity.
 	# The sha256 checkum can be obtained with "sha256sum FILENAME".
