@@ -3,7 +3,7 @@ include ../mk/include.mk
 
 
 # Then we need to export some packaging information, so that the u2deb shell
-# script we use can make use these.
+# script we use can make use of it.
 
 # The original name of the game, including special chars and spaces.
 export UPSTREAMNAME     = My Super Awesome Action Game!!!
@@ -52,13 +52,13 @@ dir            = MySuperAwesomeActionGame_Linux_v1.0.2
 cleanfiles     = $(dir)
 
 # Everything that should be deleted with 'make distclean'.
-# You should add the downloaded archive's name here and not to cleanfiles if
-# you don't want to re-download it whenever you run 'make clean'.
+# You should add the name of the downloaded archive here and not to 'cleanfiles'
+# if you don't want to re-download it whenever you run 'make clean'.
 distcleanfiles = $(bin)
 
 
 
-# The Makefile target to download the game.
+# The Makefile's target to download the game.
 download:
 	# Check if the archive exists, otherwise download it.
 	test -f $(bin) || wget "http://www.super-awesome.games/download/$(bin)"
@@ -77,11 +77,11 @@ download:
 # But you can add other tasks too if they're required.
 prepare:
 	# Extract the archive.
-	# Check the manpages of unzip, unrar or tar for more details.
+	# Check the manpages of unzip, unrar or tar for all the available commands.
 	unzip $(bin)
 
-	# If the game starts with a configuration panel and this panel is missing the game's logo,
-	# you can copy a logo with the filename ScreenSelector.png into the GAMENAME_Data subdirectory.
+	# If the game starts with a configuration panel and this panel is missing the game's logo, then
+	# you can copy a logo with the filename 'ScreenSelector.png' into the GAMENAME_Data subdirectory.
 	# If you can't find a good logo, just copy the 1x1 pixels dummy image from "../mk".
 	cp ../mk/ScreenSelector.png "$(dir)/My Super Awesome Action Game_Data/"
 
