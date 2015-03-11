@@ -9,6 +9,10 @@ include ../mk/include.mk
 export UPSTREAMNAME     = My Super Awesome Action Game!!!
 
 # Specify a name for the executable and the package (lower-case, no spaces, etc.).
+# Please make sure that the name isn't already in use, neither as a command in PATH
+# nor as package name. You can use the online package search for Debian and Ubuntu:
+#  https://www.debian.org/distrib/packages#search_packages
+#  http://packages.ubuntu.com/
 export FILENAME         = awesome-action-game
 
 # A brief game description for the package and menu entry,
