@@ -16,6 +16,11 @@ define verifysha256
 endef
 
 
+define download
+    test -f $(1) || wget -O $(1) '$(2)'
+endef
+
+
 alldeps = debhelper u2deb wget $(deps)
 
 

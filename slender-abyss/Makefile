@@ -6,23 +6,24 @@ export VERSION          = 0.1.5
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>
 export HOMEPAGE         = http://www.moddb.com/games/slender-abyss
 export YEAR             = 2013
-export RIGHTHOLDER      = Matt Sutton
+export COPYRIGHT        = Matt Sutton
 
 deps           = unzip
 bin            = slender-abyss.zip
-cleanfiles     = slender-abyss
+dir            = slender-abyss
+cleanfiles     = $(dir)
 distcleanfiles = $(bin)
 
 
 download:
-	test -f $(bin) || wget -O $(bin) "http://www.moddb.com/downloads/mirror/55410/109/a6eb05e446411b1722ab018ff63c3261"
+	@ $(call download,$(bin),http://www.moddb.com/downloads/mirror/55410/109/a6eb05e446411b1722ab018ff63c3261)
 	@ $(call verifysha256,$(bin),b05f85b5ad19bac3be077efbb9f7c409e29eaefb6399d6aa6e63d4e78de4e43e)
 
 prepare:
 	unzip $(bin)
 	rm -r __MACOSX
-	mv "Slender Abyss (Linux) V.0.1.5" slender-abyss
-	rename 's/Slender Abyss \(Linux\)/slender-abyss/' slender-abyss/*
-	mv slender-abyss/slender-abyss slender-abyss/slender-abyss.x86
-	rm slender-abyss/*.rtf
-	u2deb prepare slender-abyss
+	mv "Slender Abyss (Linux) V.0.1.5" $(dir)
+	rename 's/Slender Abyss \(Linux\)/$(dir)/' $(dir)/*
+	rm $(dir)/*.rtf
+	u2deb prepare $(dir)
+

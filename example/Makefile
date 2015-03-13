@@ -13,7 +13,7 @@ export UPSTREAMNAME     = My Super Awesome Action Game!!!
 # nor as package name. You can use the online package search for Debian and Ubuntu:
 #  https://www.debian.org/distrib/packages#search_packages
 #  http://packages.ubuntu.com/
-export FILENAME         = awesome-action-game
+export PKGNAME          = awesome-action-game
 
 # A brief game description for the package and menu entry,
 # mustn't exceed 80 characters, mustn't start with an article.
@@ -38,7 +38,7 @@ export YEAR             = 2013
 
 # Who's holding the copyright?
 # Just enter the game's homepage or "the game developers" if you're unsure.
-export RIGHTHOLDER      = the developers and contributors of "My Super Awesome Action Game!!!"
+export COPYRIGHT        = the developers and contributors of "My Super Awesome Action Game!!!"
 
 
 
@@ -64,11 +64,11 @@ distcleanfiles = $(bin)
 
 # The Makefile's target to download the game.
 download:
-	# Check if the archive exists, otherwise download it.
-	test -f $(bin) || wget "http://www.super-awesome.games/download/$(bin)"
-	# Use 'wget -O' (capital "oh") if you want to download an archive from an address
-	# which doesn't reveal the filename:
-	# test -f $(bin) || wget -O $(bin) "http://www.super-awesome.games/index.php?action=download"
+	# Download the archive. The download will be skipped if the file already exists.
+	# Usage is: @ $(call download,FILENAME,URL)
+	# URL should be without quotes. FILENAME is the filename we want for our archive,
+	# and not necessarily the original filename.
+	@ $(call download,$(bin),http://www.super-awesome.games/download/$(bin))
 
 	# Verify the sha256 checksum to check the file's integrity.
 	# The sha256 checkum can be obtained with "sha256sum FILENAME".

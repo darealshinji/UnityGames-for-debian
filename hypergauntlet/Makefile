@@ -6,7 +6,7 @@ export VERSION          = 0.9
 export MAINTAINER       = Marshall Banana <djcj@gmx.de>
 export HOMEPAGE         = http://www.indiedb.com/games/hypergauntlet
 export YEAR             = 2013
-export RIGHTHOLDER      = udellgames
+export COPYRIGHT        = udellgames
 
 deps           = unzip
 bin            = hg.zip
@@ -15,7 +15,7 @@ distcleanfiles = $(bin)
 
 
 download:
-	test -f $(bin) || wget -O $(bin) "http://www.indiedb.com/downloads/mirror/61678/107/ec260caa3b10358a2542a43977e18a9e"
+	@ $(call download,$(bin),http://www.indiedb.com/downloads/mirror/61678/107/ec260caa3b10358a2542a43977e18a9e)
 	@ $(call verifysha256,$(bin),917c1136d020386ccb4d98a66c5a88abde43cfc062008a665ebf082418a5ac46)
 
 prepare:
