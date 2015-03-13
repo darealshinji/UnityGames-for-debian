@@ -14,7 +14,7 @@ This requires the command line tools [u2deb](https://github.com/darealshinji/Uni
 To resolve all package dependencies you should also install `libgtk2.0-0 libgtk2.0-0:i386 libglu1-mesa libglu1-mesa:i386`
 
 You can use the provided shell scripts to build Debian packages of u2deb and patchelfmod.
-Those packages will also resolve all the required dependencies.
+u2deb's package will also resolve all the required dependencies.
 
 
 **Important:**
