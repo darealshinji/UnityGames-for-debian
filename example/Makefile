@@ -84,11 +84,6 @@ prepare:
 	# Check the manpages of unzip, unrar or tar for all the available commands.
 	unzip $(bin)
 
-	# If the game starts with a configuration panel and this panel is missing the game's logo, then
-	# you can copy a logo with the filename 'ScreenSelector.png' into the GAMENAME_Data subdirectory.
-	# If you can't find a good logo, just copy the 1x1 pixels dummy image from "../mk".
-	cp ../mk/ScreenSelector.png "$(dir)/My Super Awesome Action Game_Data/"
-
 	# Run the prepare phase of u2deb.
 	# See 'man u2deb' or 'u2deb --help' for more information about the commands.
 	u2deb prepare $(dir)

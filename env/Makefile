@@ -23,6 +23,5 @@ download:
 
 prepare:
 	unzip $(bin) -d $(dir)
-	cp ../mk/ScreenSelector.png $(dir)/Env_Data
 	u2deb prepare $(dir)
 

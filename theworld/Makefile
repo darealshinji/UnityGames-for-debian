@@ -22,6 +22,5 @@ download:
 prepare:
 	unzip $(bin) -d $(dir)
 	rename 's/\[TheWorld\]Client_Linux/TheWorld/' $(dir)/*
-	cp ../mk/ScreenSelector.png $(dir)/TheWorld_Data
 	u2deb prepare $(dir) -Z=gzip
 

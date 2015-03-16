@@ -25,6 +25,5 @@ download:
 prepare:
 	unrar x $(bin)
 	rm -r $(dir)/Images
-	cp ScreenSelector.png $(dir)/"The Plague_Data"
 	u2deb prepare $(dir)
 
