@@ -1,0 +1,7 @@
+Delta g Arena is a first person variable gravity training exercise. You must navigate an arena of floating platforms using only your ability to modify your own local gravity by firing at a surface to make it the new "floor," and a limited ability to drag yourself towards a target. The simulation has a time limit, but reaching specific highlighted platforms will extend your timer. Going outside of the arena immediately ends the simulation.
+
+This is a very simple game-jam old-fashioned play-for-a-high-score kind of exercise, which can admittedly be pretty frustrating at first, but once you have the hang of it you can get around the arena surprisingly quickly.
+
+Created by Michael McCollum (@gnustoboz) as an entry for the 7DFPS 2014 game jam and for One Game A Month. See more at maximumverbosity.net/1GAM/.
+
+Music by Ben Freund (soundcloud.com/ben-freund).
