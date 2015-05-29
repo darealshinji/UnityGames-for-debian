@@ -26,7 +26,7 @@ download:
 
 prepare:
 	unzip $(bin)
-	u2deb prepare $(dir)/Build10 -Z=bz2 --data --icon=$(icon)
+	u2deb prepare $(dir)/Build10 --data --icon=$(icon)
 	cp $(dir)/*.docx $(tmp)
 	echo '$(tmp)/*.docx' > $(tmp)/build/x86/debian/docs
 	echo '$(tmp)/*.docx' > $(tmp)/build/x86_64/debian/docs

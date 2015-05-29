@@ -18,5 +18,5 @@ download:
 
 prepare:
 	unzip $(bin)
-	u2deb prepare MonochromaBin_Kickstarter_Linux -Z=bzip2 --data
+	u2deb prepare MonochromaBin_Kickstarter_Linux --data
 

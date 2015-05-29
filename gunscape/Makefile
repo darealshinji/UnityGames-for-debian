@@ -22,5 +22,5 @@ prepare:
 	unzip $(bin)
 	rm -rf __MACOSX
 	export VERSION=`ls $(dir)/*.x86 | cut -d 'v' -f2 | sed 's/.x86//'` ;\
-	u2deb prepare $(dir) -Z=bz2
+	u2deb prepare $(dir)
 

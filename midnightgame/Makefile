@@ -24,5 +24,5 @@ prepare:
 	mkdir $(dir)
 	unrar x $(bin) $(dir)
 	rm "$(dir)/Min and Rec. Reqs..rtf"
-	u2deb prepare $(dir) -Z=bz2
+	u2deb prepare $(dir)
 

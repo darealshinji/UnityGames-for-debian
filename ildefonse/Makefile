@@ -26,5 +26,5 @@ download:
 prepare:
 	mkdir $(dir)
 	cd $(dir) && unrar x ../$(bin)
-	u2deb prepare $(dir) -Z=bz2 --icon=$(icon)
+	u2deb prepare $(dir) --icon=$(icon)
 

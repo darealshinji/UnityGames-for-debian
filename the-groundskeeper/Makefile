@@ -25,7 +25,7 @@ prepare:
 	unzip $(bin)
 	mv $(dir)\(Linux\) $(dir)
 	cp $(dir)/"ReadMe (Please Read).txt" README
-	u2deb prepare $(dir) -Z=bzip2
+	u2deb prepare $(dir)
 	cp README $(builddir)
 	echo README > $(builddir)/debian/docs
 
