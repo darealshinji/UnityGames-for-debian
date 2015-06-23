@@ -21,7 +21,7 @@ download:
 
 prepare:
 	unrar x $(bin)
-	u2deb prepare $(dir) -Z=gzip
+	u2deb prepare $(dir) --gzip
 	cp $(dir)/Changelog.txt $(builddir)
 	cat override_dh_installchangelogs >> $(builddir)/rules
 

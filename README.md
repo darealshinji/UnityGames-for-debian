@@ -19,7 +19,7 @@ u2deb's package will also resolve all the required dependencies.
 
 **Important:**
 
-I always test the packages here before I push a new commit (I'm currently using Ubuntu 14.04).
+I always test the packages here before I push a new commit (I'm using Ubuntu).
 But I can never guarantee if a game's download resource will disappear or not.
 You should also keep in mind that closed-source software, especially if it hasn't been updated for ages, and
 programs that use certain embedded libraries are considered a potential security risk in Debian-based distributions.

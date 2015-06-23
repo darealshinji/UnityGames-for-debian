@@ -22,5 +22,5 @@ download:
 prepare:
 	unzip $(bin) -d $(dir)
 	rename 's/\[TheWorld\]Client_Linux/TheWorld/' $(dir)/*
-	u2deb prepare $(dir) -Z=gzip
+	u2deb prepare $(dir) --gzip
 

@@ -19,5 +19,5 @@ download:
 
 prepare:
 	unzip $(bin) -d nexus
-	u2deb prepare nexus -Z=gzip
+	u2deb prepare nexus --gzip
 

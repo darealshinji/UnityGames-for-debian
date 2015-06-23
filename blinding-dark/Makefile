@@ -21,5 +21,5 @@ download:
 
 prepare:
 	unzip $(bin) -d $(dir)
-	u2deb prepare $(dir) --data -Z=gzip
+	u2deb prepare $(dir) --data --gzip
 

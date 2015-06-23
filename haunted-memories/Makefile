@@ -22,5 +22,5 @@ prepare:
 	unzip $(bin) -d $(dir)
 	rename 's/Haunt_1.1/Haunted Memories/' $(dir)/*
 	rename 's/Haunt_1/Haunted Memories/' $(dir)/*
-	u2deb prepare $(dir) -Z=gzip --data
+	u2deb prepare $(dir) --gzip --data
 
