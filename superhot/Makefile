@@ -17,7 +17,7 @@ distcleanfiles = $(bin) $(icon)
 
 
 download:
-	@ $(call download,$(bin),http://superhotgame.com/$(bin))
+	@ $(call download,$(bin),http://superhotgame-new.azurewebsites.net/BUILDS/$(bin))
 	@ $(call download,$(icon),http://fs1.directupload.net/images/150103/8jk9r9gd.png)
 	@ $(call verifysha256,$(bin),5b074dc815508d5e2552d488479c0abf157de8d5b92a4f36f05a706577122ec0)
 	@ $(call verifysha256,$(icon),b460982fb454d504474c33cf6c7f6f4367f1a611208d121a791cd4ac764fff73)
