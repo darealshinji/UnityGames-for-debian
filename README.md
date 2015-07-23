@@ -7,13 +7,12 @@ You can use the Makefiles in the directories to automatically download a game an
 This isn't intended to be a complete collection, it's more like an example on how to build packages from
 any Unity engine game. The directory 'example' contains example files with detailed explanatory commentaries.
 
-This requires the command line tools [u2deb](https://github.com/darealshinji/UnityEngine2deb) and
-[patchelfmod](https://github.com/darealshinji/patchelfmod) as well as the following packages:
-`debhelper librsvg2-bin imagemagick execstack`
+This requires the command line tool [u2deb](https://github.com/darealshinji/UnityEngine2deb) as well as the following packages:
+`debhelper imagemagick execstack`
 
 To resolve all package dependencies you should also install `libgtk2.0-0 libgtk2.0-0:i386 libglu1-mesa libglu1-mesa:i386`
 
-You can use the provided shell scripts to build Debian packages of u2deb and patchelfmod.
+You can use the provided shell script to build a Debian package of u2deb.
 u2deb's package will also resolve all the required dependencies.
 
 
