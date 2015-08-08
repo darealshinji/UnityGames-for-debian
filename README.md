@@ -5,7 +5,8 @@ the Unity engine and exported to GNU/Linux.
 You can use the Makefiles in the directories to automatically download a game and build a Debian package
 (it's a bit like the AUR from Arch Linux).
 This isn't intended to be a complete collection, it's more like an example on how to build packages from
-any Unity engine game. The directory 'example' contains example files with detailed explanatory commentaries.
+any Unity engine game. However I will add games whenever I find something interresting.
+The directory 'example' contains example files with detailed explanatory commentaries.
 
 This requires the command line tool [u2deb](https://github.com/darealshinji/UnityEngine2deb) as well as the following packages:
 `debhelper imagemagick execstack`
