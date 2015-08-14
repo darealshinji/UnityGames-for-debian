@@ -1,8 +1,0 @@
-
-override_dh_install:
-	dh_install
-	rm debian/ofguardsandthieves/usr/lib/ofguardsandthieves/ofguardsandthieves_Data/Resources/UnityPlayer.png
-	install -m644 debian/ofguardsandthieves/usr/share/icons/hicolor/128x128/apps/ofguardsandthieves.png \
-		$(CURDIR)/debian/ofguardsandthieves/usr/lib/ofguardsandthieves/ofguardsandthieves_Data/Resources/UnityPlayer.png
-	install -m755 ofguardsandthieves $(CURDIR)/debian/ofguardsandthieves/usr/games/
-
