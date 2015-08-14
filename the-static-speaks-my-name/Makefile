@@ -27,5 +27,6 @@ prepare:
 	mv "static linux" $(dir)
 	cp ScreenSelector.png $(dir)/thestatic_linux_Data/
 	rm -rf $(dir)/thestatic_mac.app
+	copyunityengine --no-sdk $(dir)
 	u2deb prepare $(dir)
 

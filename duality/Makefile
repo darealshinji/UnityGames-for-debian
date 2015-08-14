@@ -9,7 +9,8 @@ export COPYRIGHT        = SteelRaven7
 
 deps           = unzip
 bin            = duality.zip
-cleanfiles     = Duality_linux
+dir            = Duality_linux
+cleanfiles     = $(dir)
 distcleanfiles = $(bin) *.png
 
 
@@ -21,5 +22,6 @@ download:
 
 prepare:
 	unzip $(bin)
-	u2deb prepare Duality_linux --icon=icon.png
+	copyunityengine --no-sdk $(dir)
+	u2deb prepare $(dir) --icon=icon.png
 

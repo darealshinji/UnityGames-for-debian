@@ -21,6 +21,7 @@ download:
 prepare:
 	unzip $(bin) -d $(dir)
 	# it doesn't start the screen selector, so there's no point in keeping these files
-	cd "$(dir)/The Plan_Data" && rm -rf Plugins ScreenSelector.png"
+	rm -rf $(dir)/The\ Plan_Data/Plugins
+	rm -f $(dir)/The\ Plan_Data/ScreenSelector.png
 	u2deb prepare $(dir)
 

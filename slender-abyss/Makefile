@@ -25,5 +25,6 @@ prepare:
 	mv "Slender Abyss (Linux) V.0.1.5" $(dir)
 	rename 's/Slender Abyss \(Linux\)/$(dir)/' $(dir)/*
 	rm $(dir)/*.rtf
+	copyunityengine --no-sdk $(dir)
 	u2deb prepare $(dir)
 

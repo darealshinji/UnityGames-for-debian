@@ -8,12 +8,11 @@ export HOMEPAGE         = http://xra.itch.io/psycho-strafe
 export YEAR             = 2014
 export COPYRIGHT        = xra
 
-deps           = unzip
+deps           = unzip execstack
 bin            = PSYCHOSTRAFE_0.1.1_LINUX.zip
 dir            = psychostrafe
 cleanfiles     = $(dir)
 distcleanfiles = $(bin)
-tmp            = /tmp/UnityEngine2deb_tmp
 
 
 download:
@@ -22,8 +21,7 @@ download:
 
 prepare:
 	unzip $(bin) -d $(dir)
+	execstack -c $(dir)/PSYCHOSTRAFE_Data/Plugins/x86/libfmod.so
+	execstack -c $(dir)/PSYCHOSTRAFE_Data/Plugins/x86_64/libfmod.so
 	u2deb prepare $(dir)
-	$(foreach THISARCH, x86 x86_64,\
-	sed -i 's@^\tdh_shlibdeps$$@\tdh_shlibdeps -l/usr/lib/psychostrafe/psychostrafe_Data/Plugins/$(THISARCH)/@' $(tmp)/build/$(THISARCH)/debian/rules ;\
-	execstack -c $(tmp)/build/$(THISARCH)/source/psychostrafe_Data/Plugins/$(THISARCH)/libfmod.so ;)
 

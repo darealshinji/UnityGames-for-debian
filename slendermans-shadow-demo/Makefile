@@ -25,5 +25,6 @@ download:
 prepare:
 	unzip $(bin) -d $(dir)
 	rename "s/\'//" $(dir)/*
+	copyunityengine --no-sdk $(dir)
 	u2deb prepare $(dir) --icon=$(icon)
 

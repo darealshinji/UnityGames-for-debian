@@ -10,7 +10,8 @@ export COPYRIGHT        = gnustoboz
 
 deps           = unzip
 bin            = delta_g.linux.zip
-cleanfiles     = delta-g
+dir            = delta-g
+cleanfiles     = $(dir)
 distcleanfiles = $(bin) icon.png
 
 
@@ -21,6 +22,7 @@ download:
 	@ $(call verifysha256,icon.png,f8776977b538aec99b2673797213592e09f6b54829b0e37a6a8cb29f4af7a9e7)
 
 prepare:
-	unzip $(bin) -d delta-g
-	u2deb prepare delta-g --icon=icon.png
+	unzip $(bin) -d $(dir)
+	copyunityengine --no-sdk $(dir)
+	u2deb prepare $(dir) --icon=icon.png
 

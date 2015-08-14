@@ -25,5 +25,6 @@ download:
 prepare:
 	unrar x $(bin)
 	rm -r $(dir)/Images
+	copyunityengine --no-sdk $(dir)
 	u2deb prepare $(dir)
 

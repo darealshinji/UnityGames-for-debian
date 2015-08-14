@@ -12,7 +12,8 @@ export COPYRIGHT        = the SUPERHOT developers: Piotr Iwanicki, Marcin Surma,
 deps           = unzip
 bin            = SUPERHOT_Prototype_Linux.zip
 icon           = sh.png
-cleanfiles     = Linux
+dir            = Linux
+cleanfiles     = $(dir)
 distcleanfiles = $(bin) $(icon)
 
 
@@ -24,6 +25,7 @@ download:
 
 prepare:
 	unzip $(bin)
-	cp $(icon) "Linux/SUPERHOT September 2013_Data/ScreenSelector.png"
-	u2deb prepare Linux --icon=$(icon)
+	cp $(icon) "$(dir)/SUPERHOT September 2013_Data/ScreenSelector.png"
+	copyunityengine --no-sdk $(dir)
+	u2deb prepare $(dir) --icon=$(icon)
 

@@ -26,5 +26,6 @@ download:
 prepare:
 	mkdir $(dir)
 	cd $(dir) && unrar x ../$(bin)
+	copyunityengine --no-sdk $(dir)
 	u2deb prepare $(dir) --icon=$(icon)
 

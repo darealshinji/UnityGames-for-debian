@@ -10,7 +10,6 @@ export COPYRIGHT        = Hades Productions
 deps           = unrar
 bin            = slender-anxiety.rar
 dir            = "Slender - Anxiety (LINUX) v0.1.9"
-builddir       = /tmp/UnityEngine2deb_tmp/build/x86/debian
 cleanfiles     = $(dir)
 distcleanfiles = $(bin)
 
@@ -21,7 +20,6 @@ download:
 
 prepare:
 	unrar x $(bin)
-	u2deb prepare $(dir) --gzip
-	cp $(dir)/Changelog.txt $(builddir)
-	cat override_dh_installchangelogs >> $(builddir)/rules
+	copyunityengine --no-sdk $(dir)
+	u2deb prepare $(dir)
 

@@ -24,5 +24,6 @@ prepare:
 	mkdir $(dir)
 	unrar x $(bin) $(dir)
 	rm "$(dir)/Min and Rec. Reqs..rtf"
+	copyunityengine --no-sdk $(dir)
 	u2deb prepare $(dir)
 

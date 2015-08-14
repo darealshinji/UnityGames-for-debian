@@ -22,5 +22,6 @@ download:
 
 prepare:
 	unzip $(bin)
+	copyunityengine --no-sdk $(dir)
 	u2deb prepare $(dir)
 

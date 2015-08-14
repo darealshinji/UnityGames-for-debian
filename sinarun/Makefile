@@ -21,6 +21,6 @@ prepare:
 	rm -rf $(dir)
 	mkdir -p $(dir)
 	cd $(dir) && 7z x ../$(bin)
-
+	copyunityengine --no-sdk $(dir)
 	u2deb prepare $(dir)
 

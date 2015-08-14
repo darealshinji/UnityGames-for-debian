@@ -11,7 +11,8 @@ export COPYRIGHT        = BK-TN
 
 deps           = unzip
 bin            = theconnection_linux.zip
-cleanfiles     = theconnection_linux
+dir            = theconnection_linux
+cleanfiles     = $(dir)
 distcleanfiles = $(bin)
 
 
@@ -21,5 +22,6 @@ download:
 
 prepare:
 	unzip $(bin)
-	u2deb prepare theconnection_linux
+	copyunityengine --no-sdk $(dir)
+	u2deb prepare $(dir)
 

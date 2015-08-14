@@ -23,5 +23,6 @@ download:
 prepare:
 	mkdir $(dir)
 	unrar x $(bin) $(dir)
+	copyunityengine --no-sdk $(dir)
 	u2deb prepare $(dir)
 

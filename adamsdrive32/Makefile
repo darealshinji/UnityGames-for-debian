@@ -24,6 +24,7 @@ download:
 
 prepare:
 	unzip $(bin)
+	copyunityengine --no-sdk linux
 	cp -f ScreenSelector.png linux/adamsdrive32_Data
 	u2deb prepare linux --icon=icon.png
 
