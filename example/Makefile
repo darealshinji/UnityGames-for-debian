@@ -13,6 +13,7 @@ export UPSTREAMNAME     = My Super Awesome Action Game!!!
 # nor as package name. You can use the online package search for Debian and Ubuntu:
 #  https://www.debian.org/distrib/packages#search_packages
 #  http://packages.ubuntu.com/
+# If not given, the package name will be generated from UPSTREAMNAME.
 export PKGNAME          = awesome-action-game
 
 # A brief game description for the package and menu entry,
@@ -84,7 +85,14 @@ prepare:
 	# Check the manpages of unzip, unrar or tar for all the available commands.
 	unzip $(bin)
 
+	# If the game is missing binaries for x86 or x86_64 you can download and add
+	# them with 'copyunityengine'. If the game contains only Windows binaries,
+	# make sure that you also delete those.
+	# See 'man copyunityengine' or 'copyunityengine --help' for more information
+	# about available commands.
+	copyunityengine $(dir)
+
 	# Run the prepare phase of u2deb.
-	# See 'man u2deb' or 'u2deb --help' for more information about the commands.
+	# See 'man u2deb' or 'u2deb --help' for more information.
 	u2deb prepare $(dir)
 
